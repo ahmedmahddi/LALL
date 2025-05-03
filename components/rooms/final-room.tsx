@@ -1,23 +1,26 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import { motion } from "framer-motion"
-import { Card, CardContent } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Heart, Gift, Music, ImageIcon, RefreshCw, Trophy } from "lucide-react"
+import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Heart, Gift, Music, ImageIcon, RefreshCw, Trophy } from "lucide-react";
+import ImageGallery from "@/components/image-gallery";
 
 export default function FinalRoom() {
-  const [activeTab, setActiveTab] = useState<"message" | "gallery" | "playlist">("message")
-  const [showConfetti, setShowConfetti] = useState(true)
+  const [activeTab, setActiveTab] = useState<
+    "message" | "gallery" | "playlist"
+  >("message");
+  const [showConfetti, setShowConfetti] = useState(true);
 
   useEffect(() => {
     if (showConfetti) {
       const timer = setTimeout(() => {
-        setShowConfetti(false)
-      }, 5000)
-      return () => clearTimeout(timer)
+        setShowConfetti(false);
+      }, 5000);
+      return () => clearTimeout(timer);
     }
-  }, [showConfetti])
+  }, [showConfetti]);
 
   return (
     <div className="flex flex-col items-center">
@@ -48,7 +51,8 @@ export default function FinalRoom() {
                 transition={{ duration: 0.5, delay: 0.4 }}
                 className="text-lg text-slate-700"
               >
-                You've solved all the puzzles and unlocked your special surprise!
+                You've solved all the puzzles and unlocked your special
+                surprise!
               </motion.p>
             </div>
 
@@ -91,65 +95,108 @@ export default function FinalRoom() {
                 >
                   <div className="mb-6 text-center">
                     <Gift className="h-16 w-16 text-forest-500 mx-auto mb-4" />
-                    <h2 className="text-2xl font-bold text-slate-800 mb-4">Your Special Message</h2>
+                    <h2 className="text-2xl font-bold text-slate-800 mb-4">
+                      HAPPY 24TH BIRTHDAYYYYYYYYYY!!!!!!!
+                    </h2>
                     <p className="text-slate-700 mb-4">
-                      Congratulations on completing all the puzzles in this dreamy escape room! Your creativity and
-                      persistence have led you to this special moment.
+                      Congratulations on completing all the puzzles in this
+                      dreamy escape room! Your creativity and persistence have
+                      led you to this special moment.
                     </p>
                     <p className="text-slate-700 mb-4">
-                      This space is meant for a personalized message from the creator to you. It could be birthday
-                      wishes, words of appreciation, or any heartfelt message that makes this experience truly special.
+                      AMAL ya AMAL i HOPE that you achiver everything you ever
+                      wanted surtt sna tkameel kraytek o tekhou diplomek o
+                      tefrah.And honestly i HOPE that you continue this journey
+                      that you are in it of discovering yourself, learning
+                      yourself, loving yourself. And from the bottom of me heart
+                      ya AMAL, im really proud of you, and i know from now on,
+                      its going to be even better. CHEERRRRSS DARLINGGG FOR
+                      PUSHHING THROUGH ANOTHER YEARR. As someone wise once said
+                      to me :
                     </p>
                     <p className="text-forest-600 font-medium">
-                      Remember, the journey through this creative space was made with love, just for you! ✨
+                      " It's not about forgetting who you are, it's about
+                      embracing yourself! " ✨
                     </p>
                   </div>
                 </motion.div>
               )}
 
               {activeTab === "gallery" && (
-                <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
-                  <h2 className="text-2xl font-bold text-slate-800 mb-4 text-center">Memory Gallery</h2>
-                  <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-                    {[1, 2, 3, 4, 5, 6].map((i) => (
-                      <div
-                        key={i}
-                        className="aspect-square bg-slate-100 rounded-lg overflow-hidden flex items-center justify-center shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105"
-                      >
-                        <div className="text-4xl">📸</div>
-                      </div>
-                    ))}
-                  </div>
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                >
+                  <h2 className="text-2xl font-bold text-slate-800 mb-4 text-center">
+                    Memory Gallery
+                  </h2>
+                  <ImageGallery images={[1, 2, 3, 4, 5, 6, 7, 8, 9]} />
                   <p className="text-center text-slate-500 mt-4">
-                    This is where special photos and memories would be displayed.
+                    Click on any image to view it in full size.
                   </p>
                 </motion.div>
               )}
 
               {activeTab === "playlist" && (
-                <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
-                  <h2 className="text-2xl font-bold text-slate-800 mb-4 text-center">Custom Playlist</h2>
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                >
+                  <h2 className="text-2xl font-bold text-slate-800 mb-4 text-center">
+                    Custom Playlist
+                  </h2>
                   <div className="space-y-2">
                     {[
-                      "Your Favorite Song #1",
-                      "A Song That Reminds Me of You",
-                      "Our Happy Memory Song",
-                      "That One Song You Always Play",
-                      "A New Discovery Just for You",
+                      {
+                        title: "Light dark light",
+                        artist: "Fred again..",
+                        duration: "3:07",
+                        url: "https://www.youtube.com/watch?v=14NvwgZhzSI",
+                      },
+                      {
+                        title: "I'm a party ",
+                        artist: "Fred again::",
+                        duration: "4:15",
+                        url: "https://www.youtube.com/watch?v=BkL4oMeSgDA",
+                      },
+                      {
+                        title: "Our Happy Memory Song",
+                        artist: "Edward Sharpe & The Magnetic Zeros - Home",
+                        duration: "3:23",
+                        url: "https://www.youtube.com/watch?v=DHEOF_rcND8&pp=ygUTaG9tZSBlZGl0aCB3aGlza2Vycw%3D%3D",
+                      },
+
+                      {
+                        title: "A New Discovery Just for You",
+                        artist: "TWO LANES - Live from Málaga",
+                        duration: "4:07",
+                        url: "https://www.youtube.com/watch?v=27cedsZpN4w&t=1310s",
+                      },
                     ].map((song, i) => (
-                      <div
+                      <a
                         key={i}
+                        href={song.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="flex items-center p-3 bg-slate-50 rounded-lg hover:bg-slate-100 transition-colors duration-200"
                       >
                         <div className="w-8 h-8 bg-forest-100 rounded-full flex items-center justify-center mr-3">
                           <Music className="h-4 w-4 text-forest-600" />
                         </div>
                         <div className="flex-1">
-                          <div className="font-medium text-slate-800">{song}</div>
-                          <div className="text-xs text-slate-500">Artist Name</div>
+                          <div className="font-medium text-slate-800">
+                            {song.title}
+                          </div>
+                          <div className="text-xs text-slate-500">
+                            {song.artist}
+                          </div>
                         </div>
-                        <div className="text-xs text-slate-400">3:42</div>
-                      </div>
+                        <div className="text-xs text-slate-400">
+                          {song.duration}
+                        </div>
+                      </a>
                     ))}
                   </div>
                 </motion.div>
@@ -169,5 +216,5 @@ export default function FinalRoom() {
         </Card>
       </motion.div>
     </div>
-  )
+  );
 }

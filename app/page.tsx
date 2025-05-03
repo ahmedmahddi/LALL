@@ -281,7 +281,7 @@ export default function EscapeRoom() {
             )}
             {currentRoom === "sudoku" && (
               <div className="min-h-screen flex flex-col items-center justify-center p-4">
-                <div className="bg-white rounded-lg shadow-lg p-6 max-w-md w-full flex flex-col items-center">
+                <div className="bg-white rounded-lg shadow-lg p-4 max-w-md w-full flex flex-col items-center">
                   <h1 className="text-3xl font-bold text-gray-800 mb-6">
                     Sudoku Puzzle
                   </h1>
